@@ -1,6 +1,9 @@
 package com.example.tutoria002.models;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
-
+@Entity
+@Table(name = "teacher")
 public class Teacher {
 
     private int id;
