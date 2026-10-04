@@ -9,6 +9,7 @@ import com.example.tutoria002.models.Teacher;
 import com.example.tutoria002.services.TeacherService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
@@ -30,5 +31,11 @@ public class TeacherController {
         return ResponseEntity.ok(teacherService.createTeacher(teacher));
     }
 
+    @PutMapping
+    public ResponseEntity<Teacher> update(@RequestBody Teacher teacher){
+        return ResponseEntity.ok(teacherService.updateTeacher(teacher));
+    }
+
+    // Crear metodo eliminacion Controller
 
 }

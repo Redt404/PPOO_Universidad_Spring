@@ -23,7 +23,16 @@ public class TeacherService {
         return  (ArrayList<Teacher>) teacherRepository.findAll();
     }
 
-    
+    public Teacher updateTeacher(Teacher teacher){
+        return existTeacher(teacher.getId()) ? teacherRepository.save(teacher) : null;
+    }
+
+    private boolean existTeacher(int id){
+        return teacherRepository.findById(id) != null ? true : false;
+    }
+
+    // Crear metodo eliminacion service  -- void boolean
+    // hagan del metodo de existTeacher para validacion
 
 
 }
