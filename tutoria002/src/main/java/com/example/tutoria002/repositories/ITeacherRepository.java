@@ -6,5 +6,6 @@ import com.example.tutoria002.models.Teacher;
 
 @Repository 
 public interface ITeacherRepository  extends CrudRepository<Teacher,Integer> {
-
+    boolean existsByEmail(String email);
+    boolean existsById(int id);
 }
