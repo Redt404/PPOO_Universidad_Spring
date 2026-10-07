@@ -1,13 +1,13 @@
-package com.example.tutoria002;
+package dev.sadis.ppoo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Tutoria002ApplicationTests {
+class PpooApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+    @Test
+    void contextLoads() {
+    }
 
 }
