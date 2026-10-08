@@ -1,5 +1,6 @@
 package com.example.tutoria002.controllers;
 
+import java.net.URI;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,10 @@ public class TeacherController {
     }
 
     @PostMapping
-    public ResponseEntity<Teacher> save(@RequestBody Teacher teacher){
-        return ResponseEntity.ok(teacherService.createTeacher(teacher));
+    public ResponseEntity<Teacher> save(@RequestBody Teacher request){
+        var teacher = teacherService.createTeacher(request);
+        URI path = URI.create("/teacher/"+ teacher.getId());
+        return ResponseEntity.created(path).body(teacher);
     }
 
     @PutMapping
