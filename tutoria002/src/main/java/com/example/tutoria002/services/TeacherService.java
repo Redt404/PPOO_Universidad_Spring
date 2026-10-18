@@ -1,7 +1,6 @@
 package com.example.tutoria002.services;
 
 import java.util.ArrayList;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.tutoria002.exception.TeacherEmailTakenException;
@@ -11,9 +10,12 @@ import com.example.tutoria002.repositories.ITeacherRepository;
 
 @Service
 public class TeacherService {
-    
-    @Autowired 
+     
     private ITeacherRepository teacherRepository;
+
+    public TeacherService(ITeacherRepository teacherRepository) {
+        this.teacherRepository = teacherRepository;
+    }
 
     public Teacher createTeacher(Teacher teacher){
         if(teacherRepository.existsByEmail(teacher.getEmail())) throw new TeacherEmailTakenException("The email " + " was already taken");
@@ -25,7 +27,9 @@ public class TeacherService {
     }
 
     public Teacher updateTeacher(Teacher teacher){
-        if(!teacherRepository.existsById(teacher.getId())) throw new TeacherNotFoundException("The teacher with id " + teacher.getId() + " not found");
+        if(!teacherRepository.existsById(teacher.getId())){
+             throw new TeacherNotFoundException("The teacher with id " + teacher.getId() + " not found");
+        }
         return teacherRepository.save(teacher);
     }
 
@@ -36,7 +40,8 @@ public class TeacherService {
     }
 
     private Teacher searchTeacher(int id){
-        return teacherRepository.findById(id).orElseThrow(()-> new TeacherNotFoundException("The teacher with id " + id + " not found"));
+        return teacherRepository.findById(id)
+        .orElseThrow(()-> new TeacherNotFoundException("The teacher with id " + id + " not found"));
     }
 
 }

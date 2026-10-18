@@ -22,8 +22,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RequestMapping("/teacher")
 public class TeacherController {
     
-    @Autowired 
     private TeacherService teacherService;
+
+    public TeacherController(TeacherService teacherService) {
+        this.teacherService = teacherService;
+    }
 
     @GetMapping
     public ResponseEntity<ArrayList<Teacher>> getAll(){
