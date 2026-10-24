@@ -3,7 +3,6 @@ package com.example.tutoria002.controllers;
 import java.net.URI;
 import java.util.ArrayList;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,8 +21,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 @RequestMapping("/teacher")
 public class TeacherController {
     
-    @Autowired 
     private TeacherService teacherService;
+
+    public TeacherController(TeacherService teacherService) {
+        this.teacherService = teacherService;
+    }
 
     @GetMapping
     public ResponseEntity<ArrayList<Teacher>> getAll(){
