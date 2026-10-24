@@ -1,26 +1,15 @@
-## Stack
+## API Gestión Académica (PPOO)
+Proyecto en desarrollo para la administración de datos universitarios.
+Por ahora solo está implementado el módulo de profesores `(/api/v1/teachers)`, que permite crear, consultar (con paginación), actualizar y eliminar docentes, incluyendo validación de correos duplicados.
+### Stack
+- Java 21 / Spring Boot 4
+- PostgreSQL + Spring Data JPA
+- Gradle
+- Swagger / Scalar (disponibles en `/scalar/` y `/swagger-ui/index.html`)
+- Postman (colección disponible en [postman_collection/](/postman_collection/PPOO_Universidad.postman_collection.json))
 
-* Java 21
-* Spring Boot 4.1.1
-* Spring Data JPA
-* Spring Web MVC
-* PostgreSQL
-* Gradle
-* Lombok
-* Jakarta Validation
-* SpringDoc OpenAPI + Scalar
-
-## Endpoints actuales
-
-### Teachers
-
-| Método   | Endpoint                | Descripción                  |
-| -------- | ----------------------- | ---------------------------- |
-| `GET`    | `/api/v1/teachers`      | Obtener todos los profesores |
-| `GET`    | `/api/v1/teachers/{id}` | Obtener un profesor por ID   |
-| `POST`   | `/api/v1/teachers`      | Crear un profesor            |
-| `PUT`    | `/api/v1/teachers/{id}` | Actualizar un profesor       |
-| `DELETE` | `/api/v1/teachers/{id}` | Eliminar un profesor         |
-
-#### La documentación interactiva de la API está disponible en `/scalar/`, también en `/swagger-ui/index.html`.
-#### La colección de Postman con las peticiones está disponible en el directorio [postman_collection](/postman_collection/)
+## Pendiente
+- Docker: Crear el Dockerfile y docker-compose.yml para levantar la app y la base de datos fácilmente.
+- Entidades del sistema: Diseñar e implementar las clases de Estudiantes, Materias, Horarios y sus relaciones.
+- Seguridad y tests: Implementar autenticación y pruebas unitarias/integración.
+- Manejo de errores: Cubrir mas casos de error.
