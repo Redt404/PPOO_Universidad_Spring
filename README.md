@@ -22,4 +22,5 @@
 | `PUT`    | `/api/v1/teachers/{id}` | Actualizar un profesor       |
 | `DELETE` | `/api/v1/teachers/{id}` | Eliminar un profesor         |
 
-La documentación interactiva de la API está disponible en `/scalar/`.
+#### La documentación interactiva de la API está disponible en `/scalar/`, también en `/swagger-ui/index.html`.
+#### La colección de Postman con las peticiones está disponible en el directorio [postman_collection](/postman_collection/)
