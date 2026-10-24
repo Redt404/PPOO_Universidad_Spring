@@ -1,0 +1,132 @@
+{
+  "info": {
+    "_postman_id": "3c08d7c8-7e50-44c9-93d3-ed8152f9bfc6",
+    "name": "PPOO_Universidad",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "59174709",
+    "_collection_link": "https://go.postman.co/collection/59174709-3c08d7c8-7e50-44c9-93d3-ed8152f9bfc6?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "getById",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8089/api/v1/teachers/1",
+          "host": [
+            "localhost"
+          ],
+          "port": "8089",
+          "path": [
+            "api",
+            "v1",
+            "teachers",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateByid",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"names\": \"Alomama\",\n  \"lastNames\": \"Tgranquique tu hijo ta frio acaba de aterrizar en canada\",\n  \"email\": \"nomeagrande@sadis.dev\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8089/api/v1/teachers/3",
+          "host": [
+            "localhost"
+          ],
+          "port": "8089",
+          "path": [
+            "api",
+            "v1",
+            "teachers",
+            "3"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteById",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "localhost:8089/api/v1/teachers/6",
+          "host": [
+            "localhost"
+          ],
+          "port": "8089",
+          "path": [
+            "api",
+            "v1",
+            "teachers",
+            "6"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAll",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8089/api/v1/teachers",
+          "host": [
+            "localhost"
+          ],
+          "port": "8089",
+          "path": [
+            "api",
+            "v1",
+            "teachers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createTeacher",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"names\":\"Pablo Emilo\",\n    \"lastNames\":\"Escobar\",\n    \"email\":\"pabloemilioescobargaviria@sadis.dev\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8089/api/v1/teachers",
+          "host": [
+            "localhost"
+          ],
+          "port": "8089",
+          "path": [
+            "api",
+            "v1",
+            "teachers"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
